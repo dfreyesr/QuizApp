@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
-class button extends StatelessWidget {
-  const button(this.width, this.height, this.borderSize, this.borderColor,
-      this.radius, this.fontSize, this.textColor, this.pressedColor,
+class Button extends StatelessWidget {
+  const Button(
+      this.width,
+      this.height,
+      this.borderSize,
+      this.borderColor,
+      this.radius,
+      this.fontSize,
+      this.textColor,
+      this.pressedColor,
+      this.function,
       {super.key});
 
   final double width;
@@ -13,13 +21,12 @@ class button extends StatelessWidget {
   final double fontSize;
   final Color textColor;
   final Color pressedColor;
+  final void Function() function;
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () {
-        debugPrint('Received click');
-      },
+    return OutlinedButton.icon(
+      onPressed: function,
       style: ButtonStyle(
         minimumSize: MaterialStateProperty.all(Size(width, height)),
         side: MaterialStateProperty.all(
@@ -39,13 +46,14 @@ class button extends StatelessWidget {
           },
         ),
       ),
-      child: Text(
+      label: Text(
         'Start quiz',
         style: TextStyle(
           color: textColor, // Change text color here
           fontSize: fontSize, // Change text size here
         ),
       ),
+      icon: const Icon(Icons.arrow_right_alt),
     );
   }
 }
