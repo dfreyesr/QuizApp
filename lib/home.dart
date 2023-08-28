@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage(this.color1, this.color2, {super.key});
@@ -34,37 +35,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            OutlinedButton(
-              onPressed: () {
-                debugPrint('Received click');
-              },
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all(const Size(160, 50)),
-                side: MaterialStateProperty.all(
-                  const BorderSide(width: 2, color: Colors.white),
-                ),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                overlayColor: MaterialStateProperty.resolveWith<Color>(
-                  (Set<MaterialState> states) {
-                    if (states.contains(MaterialState.pressed)) {
-                      return color1;
-                    }
-                    return Colors.transparent;
-                  },
-                ),
-              ),
-              child: const Text(
-                'Start quiz',
-                style: TextStyle(
-                  color: Colors.white, // Change text color here
-                  fontSize: 22, // Change text size here
-                ),
-              ),
-            ),
+            button(160, 50, 2, Colors.white, 12, 22, Colors.white, color1),
           ],
         ),
       ),
