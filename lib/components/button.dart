@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/text.dart';
+import 'package:quiz_app/components/text.dart';
 
 class Button extends StatelessWidget {
   const Button(

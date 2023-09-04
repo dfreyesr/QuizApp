@@ -6,12 +6,15 @@ class TextComponent extends StatelessWidget {
       {required this.text,
       required this.fontSize,
       required this.fontWeight,
+      this.textColor = Colors.white,
+      this.textAlign = TextAlign.center,
       super.key});
 
-  final Color textColor = Colors.white;
+  final Color textColor;
   final String text;
   final FontWeight fontWeight;
   final double fontSize;
+  final TextAlign textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class TextComponent extends StatelessWidget {
         fontSize: fontSize,
         fontWeight: fontWeight,
       ),
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
     );
   }
 }
