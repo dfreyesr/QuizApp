@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/Button.dart';
+import 'package:quiz_app/components/components.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage(this.function, {super.key});
@@ -19,27 +19,19 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 60,
           ),
-          const Text(
-            'Learn Flutter the fun way!',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-              decoration: TextDecoration.none,
-            ),
+          const TextComponent(
+            text: "Learn Flutter the fun way!",
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
           ),
           const SizedBox(
-            height: 40,
+            height: 24,
           ),
           Button(
-            160,
-            50,
-            2,
-            Colors.white,
-            12,
-            22,
-            Colors.white,
-            const Color.fromRGBO(97, 6, 55, 1),
-            function,
+            text: "Start Quiz",
+            fontSize: 24,
+            onTap: function,
+            isStartButton: true,
           ),
         ],
       ),
